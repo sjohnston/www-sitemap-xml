@@ -1,9 +1,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 40;
+use Test::More tests => 39 + ($ENV{AUTHOR_TESTING} || 0);
 use Test::Exception;
-use Test::NoWarnings;
+use if $ENV{AUTHOR_TESTING}, 'Test::NoWarnings';
 use URI;
 
 {

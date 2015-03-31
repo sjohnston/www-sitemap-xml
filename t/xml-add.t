@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-use Test::More tests => 31;
+use Test::More tests => 30 + ($ENV{AUTHOR_TESTING} || 0);
 use Test::Exception;
-use Test::NoWarnings;
+use if $ENV{AUTHOR_TESTING}, 'Test::NoWarnings';
 use URI;
 
 BEGIN { use_ok('WWW::Sitemap::XML') };
